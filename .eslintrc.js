@@ -3,7 +3,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    node: true,
+    node: true,            // <-- add this
     'jest/globals': true
   },
   extends: ['eslint:recommended', 'plugin:react/recommended'],
@@ -24,5 +24,11 @@ module.exports = {
     'arrow-spacing': ['error', { before: true, after: true }],
     'no-console': 'error',
     'react/prop-types': 0
-  }
+  },
+  overrides: [
+    {
+      files: ['**/*.test.*', '**/*.spec.*'],
+      env: { jest: true, node: true }
+    }
+  ]
 }
